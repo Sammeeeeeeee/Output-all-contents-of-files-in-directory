@@ -1,5 +1,3 @@
-Here's the corrected version of your instructions:
-
 # How to use:
 1. Open your preferred batch terminal - for example, CMD.
 2. Navigate to the directory. For example, `cd C:\Users\User\Documents\Code`.
