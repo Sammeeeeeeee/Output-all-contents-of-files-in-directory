@@ -1,6 +1,5 @@
 @echo off
 
-REM List all files in the directory with numbers
 setlocal enabledelayedexpansion
 set count=1
 for %%f in (*) do (
@@ -8,7 +7,6 @@ for %%f in (*) do (
     set /a count+=1
 )
 
-REM Prompt user to input numbers
 set /p selection=Enter the numbers of the files you want to view (separated by space):
 for %%n in (%selection%) do (
     for %%f in (*) do (
@@ -22,7 +20,6 @@ for %%n in (%selection%) do (
     set filecount=0
 )
 
-REM Save contents to results.txt
 set /p save=Do you want to save the contents to a results.txt? (Y/N)
 if /i "%save%"=="Y" (
     (for %%n in (%selection%) do (
@@ -35,5 +32,10 @@ if /i "%save%"=="Y" (
             )
         )
         set filecount=0
-    )) > results.txt
+    )) > results.txt && echo Saved.
 )
+echo Exiting and removing script...
+
+del "%~f0" 2>nul
+
+exit /b
